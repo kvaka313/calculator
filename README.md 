@@ -42,10 +42,12 @@ If I have more time I will implement the possibility to add custom complex funct
 (2+3*5)/myfunc(10*5+otherFunc(30))
 
 # How to run code
+
 ## Build project
  ./gradlew clean
  and then
  ./gradlew build
+
 ## Run project
 take archive in folder /calculator/build/libs calculator-1.0-SNAPSHOT.jar
 and then run:

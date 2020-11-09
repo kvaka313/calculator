@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
+/**
+ * CalculateExpression is class for calculate RPN
+ */
 public class CalculateExpression {
     private static final String CLEAR = "c";
     private Deque<Double> output = new ArrayDeque<>();
@@ -53,6 +56,7 @@ public class CalculateExpression {
 
             if(operation.getClass().getSuperclass() == BinaryOperation.class) {
                 BinaryOperation binaryOperation = (BinaryOperation) operation;
+                // we should use leftOperand operation rightOperand
                 binaryOperation.setRightOperand(output.pollFirst());
                 binaryOperation.setLeftOperand(output.pollFirst());
                 output.addFirst(binaryOperation.calculate());

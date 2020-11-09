@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Parser is class for parsing input line.
+ * Converter is class for converting form string to List of lexems.
  */
 public class Converter {
 
