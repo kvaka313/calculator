@@ -1,1 +1,2 @@
-CALCULATOR
+build: ./gradlew build
+run: java -jar calculator-1.0-SNAPSHOT.jar
