@@ -1,2 +1,52 @@
-build: ./gradlew build
-run: java -jar calculator-1.0-SNAPSHOT.jar
+# Description
+Examples how to use calculator.
+## Example 1
+```java
+> -3
+-3.0
+> -2
+-2.0
+> *
+6.0
+> 5
+5.0
+> +
+11.0
+> c (clear buffer)
+null
+>3
+3
+>2
+2
+>+
+5
+```
+## Example 2
+```java
+> 5 8 +
+13.0
+> 13 -
+0.0
+```
+The calculator exit when it receives a q command.
+If it is necessary to extend number of operation you should inherit from classe BinaryOperation or  UnitaryOperation.
+
+# Technical choices
+The choice of architecture is dictated by two conditions:
+1. The ability to easily add new operations
+2. Possible use other interfaces with calculator-engine.
+Now if it is necessary to extend number of operation you should inherit from classe BinaryOperation or  UnitaryOperation.
+
+# Trade-offs
+If I have more time I will implement the possibility to add custom complex functions to calculator something like:
+(2+3*5)/myfunc(10*5+otherFunc(30))
+
+# How to run code
+## Build project
+ ./gradlew clean
+ and then
+ ./gradlew build
+## Run project
+take archive in folder /calculator/build/libs calculator-1.0-SNAPSHOT.jar
+and then run:
+ > java -jar calculator-1.0-SNAPSHOT.jar
