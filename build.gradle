@@ -1,0 +1,35 @@
+buildscript {
+    ext {
+        jUnitVersion = '4.12'
+        apacheCommonVersion = '3.11'
+
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group 'org.alexander'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile project(':calculator-engine')
+    testCompile "junit:junit:${jUnitVersion}"
+}
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.alexander.calculator.Main'
+        )
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

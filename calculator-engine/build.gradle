@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+group 'org.alexander'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.apache.commons:commons-lang3:${apacheCommonVersion}"
+    testCompile "junit:junit:${jUnitVersion}"
+}
